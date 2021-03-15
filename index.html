@@ -4,18 +4,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The hypothetical home of Marmotcoin">
-  <meta name="author" content="jordymhayes">
+  <meta name="description" content="The virtual home of Marmots">
 
-  <title>Marmotcoin</title>
-
+  <title>Marmots Den</title>
 </head>
 
 <body>
   <h1>Marmot</h1>
   <div>
     <p>MARM</p>
+    <p id="block"></p>
   </div>
+
+  <script type="module">
+    import { ethers } from "https://cdn.ethers.io/lib/ethers-5.0.esm.min.js";
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+    var elem = document.getElementById("block");
+    elem.text = provider.getBlockNumber()
+  </script>
+
 </body>
 
 </html>
